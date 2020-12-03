@@ -1,0 +1,109 @@
+@import url(./reset.css);
+.wrap {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: no-repeat top/120% url(../img/bg.png);
+}
+button {
+  outline: none;
+}
+.spotright {
+  width: 100%;
+  height: 100vh;
+}
+.wrap h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  text-align: center;
+}
+.wrap h1 img {
+  display: block;
+  margin-bottom: 80px;
+}
+.wrap h1::after {
+  content: "";
+  display: inline-block;
+  width: 318px;
+  height: 59px;
+  background: center url(../img/title3.png);
+}
+.nav-btn {
+  position: absolute;
+  top: 0;
+  margin: 40px 0 0 40px;
+}
+.wrap.on::after {
+  content: "";
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: show 0.5s forwards;
+}
+nav {
+  display: none;
+}
+nav .bar {
+  display: block;
+  margin-top: 2px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: all 0.5s;
+}
+.wrap.on nav {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.wrap.on nav ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: show 0.5s forwards;
+}
+.wrap.on nav li {
+  margin-bottom: 40px;
+}
+.wrap.on nav li a {
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+}
+.wrap.off::after,
+.wrap.off nav ul {
+  animation: hide 0.5s forwards;
+}
+nav .close-nav-btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
